@@ -1,0 +1,8 @@
+# Site settings
+title: ".Code()"
+email: rollins.joseph@gmail.com
+baseurl: ""
+github_username:  fortruce
+
+# Build settings
+markdown: kramdown
