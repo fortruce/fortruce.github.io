@@ -2,6 +2,8 @@
 title: ".Code()"
 description: "Coding for fun."
 
+paginate: 5
+
 # social
 email: "rollins.joseph@gmail.com"
 github_username: "fortruce"
@@ -12,7 +14,12 @@ defaults:
   -
     scope:
       path: ""
+      type: "drafts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
       type: "posts"
     values:
       layout: "post"
-      author: "Joseph Rollins"
