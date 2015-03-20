@@ -1,3 +1,8 @@
+---
+layout: post
+title: TDD a REST Api with Clojure.Test
+---
+
 # TDD a REST Api with Clojure.Test
 
 ## Goal
