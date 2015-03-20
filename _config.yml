@@ -1,8 +1,18 @@
-# Site settings
+# site
 title: ".Code()"
-email: rollins.joseph@gmail.com
-baseurl: ""
-github_username:  fortruce
+description: "Coding for fun."
 
-# Build settings
-markdown: kramdown
+# social
+email: "rollins.joseph@gmail.com"
+github_username: "fortruce"
+
+url: "http://localhost:4000"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Joseph Rollins"
