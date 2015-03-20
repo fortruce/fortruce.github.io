@@ -1,18 +1,14 @@
 ---
-layout: post
 title: TDD a REST Api with Clojure.Test
 ---
-
-# TDD a REST Api with Clojure.Test
-
-## Goal
 
 This post will demonstrate how to use test driven development (TDD) to build
 a RESTful API in Clojure. The server will utilize the defacto standard Clojure
 libraries for building web applications: [Ring][1] and [Compojure][2]. For testing, the
 standard Clojure testing library `clojure.test` will be used.
 
-## Our Rest Api
+Our Rest Api
+---------------
 
 The API we will be designing will be the backend to a slightly less than trivial TODO
 List application. The overall goal for the application will be for a *user* to be able
@@ -42,8 +38,6 @@ Our endpoints will be structured as follows:
     PUT:    Update todo with :todo-id that belongs to :list-id
     DELETE: Delete todo with :todo-id that belongs to :list-id
 ```
-
-## References
 
 [1]: https://github.com/ring-clojure/ring
 [2]: https://github.com/weavejester/compojure
