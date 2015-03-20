@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+<article>
+  <header class="brief">
+    <h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h1>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+  </header>
+</article>
+{% endfor %}
+
+<nav>
+  <ul class="hnav flexbox">
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <li><a href="{{ site.url }}/">Prev</a></li>
+      {% else %}
+        <li><a href="{{ site.url }}/page{{ paginator.previous_page }}">Prev</a></li>
+      {% endif %}
+    {% else %}
+      <li><span class="disabled">Prev</span></li>
+    {% endif %}
+
+    <li><span class="disabled">{{ paginator.page }}</span></li>
+
+    {% if paginator.next_page %}
+      <li><a href="{{ site.url }}/page{{ paginator.next_page }}">Next</a></li>
+    {% else %}
+      <li><span class="disabled">Next</span></li>
+    {% endif %}
+  </ul>
+</nav>
