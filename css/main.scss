@@ -1,31 +1,142 @@
 ---
 ---
 
-body {
-  max-width: 600px;
-  margin: auto;
-  background: #f0f0f0;
+@import 'normalize';
+
+$font-stack: 'Open Sans', sans-serif;
+$font-primary: #858585;
+$font-header: #545454;
+$hover-color: #6A7791;
+$header-background: #3498DB;
+$background: white;
+$header-text: white;
+$header-hover: #C9D2ED;
+$rule-color: #efefef;
+
+a { color: inherit; }
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    text-align: center;
+    color: $font-header;
+}
+ul { padding: 0; }
+
+html {
+    font-family: $font-stack;
+    color: $font-primary;
+    background: $background;
+}
+
+p { line-height: 1.7em; }
+
+// contain the entire page below header in
+// a responsive centered column
+header, footer, section, article {
+    display: block;
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header, footer { text-align: center; }
+
+/* invis-anchor removes default styling of anchor elements and just
+   styles the hover pseudo-class */
+@mixin invis-anchor ($hover) {
+    a {
+        &:active, &:link, &:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+        &:hover {
+            color: $hover
+        }
+    }
 }
 
 .hnav {
-  li {
-    display: inline-block;
-  }  
+    text-align: center;
+    
+    li {
+        width: 120px;
+        display: inline-block;
+    }  
 }
 
-ul {
-  padding: 0px;
+section {
+    padding: 50px 0;
 }
 
-.flexbox {
-  margin: 20px 20px;
-  display: flex;
-  justify-content: space-between;
+.header {
+    background: $header-background;
+    max-width: none;
+    padding: 80px 0 10px 0;
+    margin-bottom: 30px;
+    color: $header-text;
+    
+    .header__title {
+        font-size: 80px;
+        color: inherit;
+    }
+    .header__tagline {
+        color: inherit;
+        font-size: 18px;
+    }
+
+    hgroup { margin-bottom: 70px; }
+
+    .active {
+        padding: 7px;
+        border: 1px solid $header-text;
+    }
+
+    @include invis-anchor($header-hover);
+
+    a:hover {
+        border-color: $header-hover;
+    }
 }
 
-.brief {
-  a, a:visited, a:hover, a:active {
-    color: inherit;
-    text-decoration: none;
-  }
+article {
+    padding: 50px 20px;
+    border-bottom: 1px solid $rule-color;
+
+    &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
 }
+
+.post__header {
+    @include invis-anchor($hover-color);
+    margin-bottom: 40px;
+
+    .post__header__title {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+}
+
+.post {
+    .post__body {
+        h1, h2, h3, h4, h5, h6 {
+            margin: 50px 0;
+        }
+    }
+}
+
+.footer {
+    @include invis-anchor($hover-color);
+    border-top: 1px solid $rule-color;
+    margin-bottom: 40px;
+
+    .footer__social {
+        font-size: 18px;
+        padding: 20px 0;
+    }
+    .footer__copy { font-size: 12px; }
+ }
