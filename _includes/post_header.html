@@ -1,0 +1,11 @@
+<header class="post__header">
+  <h1 class="post__header__title">
+    <a href="{{ site.url }}{{ include.post.url }}">
+      {{ include.post.title }}
+    </a>
+  </h1>
+  <time class="post__header__time"
+        datetime="{{ include.post.date | date_to_xmlschema }}">
+    ~ {{ include.post.date | date_to_string }} ~
+  </time>
+</header>

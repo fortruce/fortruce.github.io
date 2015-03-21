@@ -2,10 +2,12 @@
 layout: default
 ---
 
-<article>
-  <header>
-    <h1><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h1>
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+<article class="post">
+  <header class="post__header">
+    <h1 class="post__header__title"><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h1>
+    <time class="post__header__time" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
   </header>
-  {{ content }}
+  <div class="post__body">
+    {{ content }}
+  </div>
 </article>
