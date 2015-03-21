@@ -8,7 +8,7 @@ paginate: 5
 email: "rollins.joseph@gmail.com"
 github_username: "fortruce"
 
-url: "http://localhost:4000"
+url: "fortruce.github.io"
 
 defaults:
   -
