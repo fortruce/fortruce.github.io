@@ -22,22 +22,25 @@ later posts.
 The backend that we will be designing will respond in a typical REST fashion.
 Our endpoints will be structured as follows:
 
-```
+~~~~~~
 /lists
     GET:    Get all lists
     POST:   Create a new list
+    
 /lists/:list-id
     GET:    Get    list with :list-id
     PUT:    Update list with :list-id
     DELETE: Delete list with :list-id
+    
 /lists/:list-id/todos
     GET:    Get all todos     belonging to :list-id
     POST:   Create a new todo belonging to :list-id
+    
 /lists/:list-id/todos/:todo-id
     GET:    Get todo    with :todo-id that belongs to :list-id
     PUT:    Update todo with :todo-id that belongs to :list-id
     DELETE: Delete todo with :todo-id that belongs to :list-id
-```
+~~~~~~
 
 [1]: https://github.com/ring-clojure/ring
 [2]: https://github.com/weavejester/compojure
