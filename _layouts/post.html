@@ -3,10 +3,7 @@ layout: default
 ---
 
 <article class="post">
-  <header class="post__header">
-    <h1 class="post__header__title"><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h1>
-    <time class="post__header__time" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-  </header>
+  {% include post_header.html post=page %}
   <div class="post__body">
     {{ content }}
   </div>
