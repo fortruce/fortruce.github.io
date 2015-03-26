@@ -10,6 +10,8 @@ github_username: "fortruce"
 
 url: "http://fortruce.github.io"
 
+highlighter: pygments
+
 defaults:
   -
     scope:
