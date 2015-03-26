@@ -4,4 +4,4 @@ layout: default
 
 # About Me
 
-I am a OS Security analyst by day and a passionate web developer by night.
+My about me is currently undergoing a redesign. Please check back later.
