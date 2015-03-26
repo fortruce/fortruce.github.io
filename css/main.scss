@@ -2,6 +2,7 @@
 ---
 
 @import 'normalize';
+@import 'syntax';
 
 $font-stack: 'Open Sans', sans-serif;
 $font-primary: #858585;
@@ -12,6 +13,7 @@ $background: #f7f7f7;
 $header-text: white;
 $header-hover: #C9D2ED;
 $rule-color: #efefef;
+$max-width: 650px;
 
 a { color: inherit; }
 h1, h2, h3, h4, h5, h6 {
@@ -39,7 +41,7 @@ p { line-height: 1.7em; }
 // a responsive centered column
 header, footer, section, article {
     display: block;
-    max-width: 650px;
+    max-width: $max-width;
     margin: 0 auto;
     position: relative;
 }
@@ -117,7 +119,7 @@ article {
     padding: 50px 0;
     border-bottom: 1px solid $rule-color;
 
-    &:last-child {
+    &:last-of-type {
         padding-bottom: 0;
         border-bottom: none;
     }
@@ -142,6 +144,12 @@ article {
             margin: 50px 0;
         }
     }
+
+    img {
+        max-width: $max-width;
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 .footer {
@@ -154,3 +162,7 @@ article {
     }
     .footer__copy { font-size: 0.8em; }
  }
+
+.pagination {
+    margin-top: 40px;
+}
