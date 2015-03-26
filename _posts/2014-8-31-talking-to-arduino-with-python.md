@@ -31,7 +31,7 @@ ls /dev/ttyUSB*
 Windows is a little less elegant.
 
 *	Open the Device Manager
-	*	[Windows + r] devmgmt.msc [enter]
+	*	`[Windows + r] devmgmt.msc [enter]`
 *	Expand `Ports (COM & LPT)`
 
 Compare the listing before and after plugging in your Arduino and see which `COM` port appears.
