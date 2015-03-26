@@ -9,3 +9,20 @@ layout: default
   {{ post.content | split: '</p>' | first }}
 </article>
 {% endfor %}
+
+<!-- pagination -->
+<div class="pagination hnav">
+  <ul>
+  {% if paginator.previous_page %}
+  <li><a href="{{ paginator.previous_page_path | prepend: site.url }}"
+     class="newer">
+    &lt;&lt; Newer</a></li>
+  {% endif %}
+  
+  {% if paginator.next_page %}
+  <li><a href="{{ paginator.next_page_path | prepend: site.url }}"
+     class="older">
+    Older &gt;&gt;</a></li>
+  {% endif %}
+  <ul>
+</div>
