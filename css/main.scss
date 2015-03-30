@@ -37,6 +37,13 @@ html {
     background: $background;
 }
 
+code {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0 5px;
+    background: #fff
+}
+
 p, ul { line-height: 1.7em; }
 
 // contain the entire page below header in

@@ -1,9 +1,9 @@
 .highlight  {
     background: #ffffff;
-    padding: 0 15px;
-    margin: 30px -30px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    code {
+        display: block;
+        padding: 15px 30px;
+    }
 }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
