@@ -2,6 +2,9 @@
 title: "Docker and Nginx: A Hello World"
 ---
 
+This post will outline the beginnings of getting a Docker container running Nginx. The goal is to
+be able to easily reconfigure the container and point out a few issues I ran into along the way.
+
 Lets pull the base nginx docker image.
 
 {% highlight bash %}
@@ -60,6 +63,7 @@ Now, lets ensure our container is actually running by listing the running contai
 
 {% highlight bash %}
 docker ps
+
 CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                                           NAMES
 5e7a307cbca6        nginx:latest        "nginx -g 'daemon of   19 minutes ago      Up 19 minutes       0.0.0.0:49155->443/tcp, 0.0.0.0:49156->80/tcp   mynginx
 {% endhighlight %}
@@ -70,6 +74,7 @@ volume mapping so it wasn't finding my config files.
 
 {% highlight bash %}
 docker logs mynginx
+
 2015/03/30 00:47:23 [emerg] 1#0: open() "/etc/nginx/nginx.conf" failed (2: No such file or directory)
 nginx: [emerg] open() "/etc/nginx/nginx.conf" failed (2: No such file or directory)
 {% endhighlight %}
@@ -79,6 +84,7 @@ it mapped so we can visit it in the web browser.
 
 {% highlight bash %}
 docker port myngix
+
 443/tcp -> 0.0.0.0:49155
 80/tcp -> 0.0.0.0:49156
 {% endhighlight %}
@@ -87,7 +93,8 @@ It will have mapped both port 80 and 443, but only port 80 will actually be serv
 connections with our base config. Now, point your browser at `localhost:49156` (**replace with your port**).
 
 {% highlight bash %}
-root@Apps:~# curl localhost:49156
+curl localhost:49156
+
 <!DOCTYPE html>
 <html>
   <body>
@@ -111,9 +118,8 @@ This will cause nginx to do a hot reload of the `config` files.
 ## Up Next
 
 This is the first step in getting my VPS set up the way I want. Ultimately, I want
-the `nginx` container to be a reverse proxy. It will proxy requests by subdomain to
-different web applications running in their own isolated containers. Also, I want to
-serve two different domains with this one VPS so it will have to proxy incoming
-requests to `example.com` to a separate Wordpress container.
+the `nginx` container to be a reverse proxy. It will proxy requests to subdomains of `example-apps.com`
+to separate docker web application containers. Also, it will proxy requests to `example-blog.com` to
+a docker Wordpress container. This way I can serve multiple domains from my single VPS.
 
 [boot2docker-bug]: https://github.com/boot2docker/boot2docker/issues/652
