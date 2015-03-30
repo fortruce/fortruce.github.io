@@ -18,3 +18,16 @@ into the events
 * `--restart=always` - set the restart option to ensure our container is restarted if it exits or the
 host restarts
 
+Instead of using `nginx-proxy` you can also run a base `nginx` container and a separate `docker-gen`
+container.
+
+{% highlight bash %}
+docker run -d -v `pwd`/conf:/etc/nginx -p 80:80 --name nginx -t nginx
+
+docker run -d --name nginx-gen --volumes-from nginx \
+    -v /var/run/docker.sock:/tmp/docker.sock \
+    -v /root/nginx/nginx.tmpl:/tmp/nginx.tmpl \
+    -t jwilder/docker-gen -notify-sighup nginx \
+    -watch -only-exposed /tmp/nginx.tmpl /etc/nginx/conf.d/default.conf
+{% endhighlight %}
+
