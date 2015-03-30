@@ -31,3 +31,7 @@ docker run -d --name nginx-gen --volumes-from nginx \
     -watch -only-exposed /tmp/nginx.tmpl /etc/nginx/conf.d/default.conf
 {% endhighlight %}
 
+NOTES:
+
+* MUST use `nginx-proxy` `nginx.tmpl` file instead of example file in blog post.
+* MUST use run command from `nginx-proxy` `Procfile` instead of from blog post or docs.
