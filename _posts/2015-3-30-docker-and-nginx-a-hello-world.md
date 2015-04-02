@@ -119,7 +119,6 @@ This will cause nginx to do a hot reload of the `config` files.
 
 This is the first step in getting my VPS set up the way I want. Ultimately, I want
 the `nginx` container to be a reverse proxy. It will proxy requests to subdomains of `example-apps.com`
-to separate docker web application containers. Also, it will proxy requests to `example-blog.com` to
-a docker Wordpress container. This way I can serve multiple domains from my single VPS.
+to separate docker web application containers.
 
 [boot2docker-bug]: https://github.com/boot2docker/boot2docker/issues/652
