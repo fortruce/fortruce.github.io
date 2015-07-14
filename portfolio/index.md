@@ -28,7 +28,7 @@ ensure there is a spot nearby to park!
 ## .Code()
 
 This very blog was built up from scratch relying on as few dependencies as possible.
-All the of design and layout was done manually without the help of any framework
+All of the design and layout was done manually without the help of any framework
 as a way to practice my CSS and responsive design.
 
 <br/>
