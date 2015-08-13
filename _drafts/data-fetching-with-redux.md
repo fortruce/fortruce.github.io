@@ -45,7 +45,43 @@ export default function search(state = initialState, action) {
 }
 {% endhighlight %}
 
-## 
+## Actions
+
+Actions are simply plain objects that by convention have a type (i.e. `ADD_SUGGESTIONS`,
+`UPDATE_SEARCH`) and some data relevant to the action. The reducer above expects
+the `ADD_SUGGESTIONS` action to have an array in the `suggestions` property and the `UPDATE_SEARCH`
+action to have a `search` property with a string.
+
+The general approach is to define **action
+creators**, functions that return actions, to make it easier to change actions
+in the future. So, let's make the two action creators.
+
+{% highlight js %}
+export function updateSearch(search) {
+  return {
+    type: 'UPDATE_SEARCH',
+    search: search
+  }
+}
+
+// addSuggestions returns an async action creator
+export function addSuggestions(search) {
+  return dispatch => {
+    fetch(`${GITHUB_API}`)
+      .then(res => res.json())
+      .then(json => dispatch({
+        type: 'ADD_SUGGESTIONS',
+        suggestions: json.items
+      }));
+  }
+}
+{% endhighlight %}
+
+## Async Action Creators
+
+If actions are supposed to be just simple objects, then why is `addSuggestions`
+returning a function? This is an example of an **Async Action Creator**. Async
+action creators return functions that take one parameter, the Redux dispatch
 
 [redux]: http://gaearon.github.io/redux/index.html
 [the-gist]: http://gaearon.github.io/redux/index.html#the-gist
