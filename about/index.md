@@ -16,9 +16,3 @@ is always something to take away.
 
 Sometimes I need a break from the computer though. In those times I enjoy biking,
 running, cooking, and drinking coffee.
-
-<br/>
-
-**I am currently looking for a new and challenging opportunity in the Washington DC
-area. If you are interested in seeing if we might be a good fit, then please email
-me at `rollins.joseph@gmail.com`.**
