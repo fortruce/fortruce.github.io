@@ -1,4 +1,5 @@
 ---
+layout: nil
 ---
 
 @import 'normalize';
@@ -35,10 +36,6 @@ html {
     font-size: 1em;
     color: $font-primary;
     background: $background;
-}
-
-code {
-    padding: 0 5px;
 }
 
 p, ul { line-height: 1.7em; }
